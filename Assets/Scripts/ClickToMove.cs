@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class ClickToMove : MonoBehaviour
 {
     NavMeshAgent _agent;
-    RaycastHit _hitinfo = new RaycastHit();
+    RaycastHit _hitInfo = new RaycastHit();
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +19,15 @@ public class ClickToMove : MonoBehaviour
     {
       if(Input.GetMouseButtonDown(0))
       {
-       Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-       if(Physics.Raycast(ray.origin, ray.direction, out _hitInfo))
-       {
-        _agent.destination = hitInfo.point;
-       }
-       else
-       {
-        _agent.destination = transform.position;
-       }
+		   Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		   if(Physics.Raycast(ray.origin, ray.direction, out _hitInfo))
+		   {
+				_agent.destination = _hitInfo.point;
+		   }
+		   else
+		   {
+				_agent.destination = transform.position;
+		   }
       } 
     }
 }

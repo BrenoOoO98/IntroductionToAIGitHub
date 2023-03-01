@@ -16,13 +16,13 @@ public class RandomMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(Vector3.Distance(_agent.destination, transform.position)< 2f)  
-     {
-      float randomX = Random.range(-5f,5f)
-      float randomZ = Ramdom.range(-5f,5f)
+		if(Vector3.Distance(_agent.destination, transform.position)< 2f)  
+		{
+		  float randomX = Random.Range(-5f,5f);
+		  float randomZ = Random.Range(-5f,5f);
 
-      Vector3 randomPosition = new Vector3(transform.psotion.x + randomX, transform.positon.y, transform.position.z + randomZ);
-      _agent.destination = randomPosition;
-     }
+		  Vector3 randomPosition = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+		  _agent.destination = randomPosition;
+		}
     }
 }
